@@ -1,73 +1,131 @@
-# Welcome to your Lovable project
 
-## Project info
+# GrowthProAI Business Insights Dashboard
 
-**URL**: https://lovable.dev/projects/231b13a4-f7ed-4ade-88c6-32f8c8ee2623
+A modern, responsive dashboard that simulates local business insights with AI-powered SEO headlines and Google Business data visualization.
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- **Interactive Business Form**: Enter business name and location
+- **Real-time Data Visualization**: Simulated Google ratings, reviews, and metrics
+- **AI-Powered SEO Headlines**: Dynamic headline generation with regeneration capability
+- **Responsive Design**: Works beautifully on desktop and mobile devices
+- **Modern UI**: Clean, professional interface built with Tailwind CSS
 
-**Use Lovable**
+## 🛠️ Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/231b13a4-f7ed-4ade-88c6-32f8c8ee2623) and start prompting.
+### Frontend
+- React 18
+- Tailwind CSS
+- Shadcn/UI Components
+- Modern ES6+ JavaScript
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend
+- Node.js
+- Express.js
+- CORS enabled
+- RESTful API design
 
-**Use your preferred IDE**
+## 📦 Installation & Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend Setup
+```bash
+# Install dependencies
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Backend Setup
+```bash
+# Create a new directory for backend
+mkdir backend && cd backend
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Copy server.js and package-backend.json to this directory
+# Rename package-backend.json to package.json
 
-**Use GitHub Codespaces**
+# Install dependencies
+npm install
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Start the server
+npm start
+# or for development with auto-reload
+npm run dev
+```
 
-## What technologies are used for this project?
+## 🔌 API Endpoints
 
-This project is built with:
+### POST /business-data
+Submit business information and receive simulated insights.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+**Request:**
+```json
+{
+  "name": "Cake & Co",
+  "location": "Mumbai"
+}
+```
 
-## How can I deploy this project?
+**Response:**
+```json
+{
+  "rating": 4.3,
+  "reviews": 127,
+  "headline": "Why Cake & Co is Mumbai's Sweetest Spot in 2025"
+}
+```
 
-Simply open [Lovable](https://lovable.dev/projects/231b13a4-f7ed-4ade-88c6-32f8c8ee2623) and click on Share -> Publish.
+### GET /regenerate-headline
+Generate a new SEO headline for the business.
 
-## Can I connect a custom domain to my Lovable project?
+**Request:**
+```
+GET /regenerate-headline?name=Cake%20&%20Co&location=Mumbai
+```
 
-Yes, you can!
+**Response:**
+```json
+{
+  "headline": "The Ultimate Guide to Cake & Co: Mumbai's Premier Destination"
+}
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Design Features
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Gradient Backgrounds**: Beautiful blue to indigo gradients
+- **Card-based Layout**: Clean, modern card components
+- **Interactive Elements**: Hover effects and smooth transitions
+- **Loading States**: Professional loading indicators
+- **Form Validation**: Client-side validation with error messaging
+- **Star Ratings**: Visual rating display with partial star support
+
+## 🚀 Usage
+
+1. **Start the Backend**: Run the Express server on `http://localhost:3001`
+2. **Start the Frontend**: Run the React app on `http://localhost:8080`
+3. **Enter Business Details**: Fill in business name and location
+4. **View Insights**: See simulated Google Business data and AI headlines
+5. **Regenerate Headlines**: Click the regenerate button for new SEO suggestions
+
+## 📱 Responsive Design
+
+The dashboard is fully responsive and optimized for:
+- Desktop computers (1024px+)
+- Tablets (768px - 1023px)  
+- Mobile phones (< 768px)
+
+## 🔧 Configuration
+
+The frontend expects the backend to run on `http://localhost:3001`. To change this, update the API endpoints in the `Index.jsx` file.
+
+## 🎯 Future Enhancements
+
+- Real Google My Business API integration
+- User authentication and data persistence
+- Advanced analytics and reporting
+- Export functionality for insights
+- Multi-language support
+
+---
+
+**Built with ❤️ for GrowthProAI Full Stack Intern Assignment**
